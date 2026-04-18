@@ -5,7 +5,6 @@ import (
 	"auto-deploy-agent/internal/config"
 	"log"
 
-	"golang.org/x/tools/go/cfg"
 )
 
 func main() {
@@ -28,5 +27,6 @@ func main() {
 			break
 		}
 		log.Printf("Received message: %s", message)
+		go client.HandleIncomingMessage(message)
 	}
 }
