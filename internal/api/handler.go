@@ -18,12 +18,16 @@ func (c *AgentClient) HandleIncomingMessage(rawMessage []byte) {
 	//route the action
 	switch task.Action {
 	case models.ActionBuild:
+		//TODO implement build logic
 		log.Println("Triggering Pipeline Build...")
 	case models.ActionDeploy:
+		//TODO implement deploy logic
 		log.Println("Triggering Docker Deployment...")
 	case models.ActionRestart:
+		//TODO implement restart logic
 		log.Println("Triggering Container Restart...")
 	case models.ActionStatus:
+		//TODO implement status reporting logic
 		log.Println("Fetching Deployment Status...")
 	default:
 		log.Printf("Unknown action: %s", task.Action)
@@ -32,5 +36,6 @@ func (c *AgentClient) HandleIncomingMessage(rawMessage []byte) {
 }
 
 func (c *AgentClient) SendStatusReport() {
+	//TODO implement status reporting logic
 	log.Println("Sending health report to backend")
 }
