@@ -13,10 +13,10 @@ type AgentClient struct {
 	Config *config.Config
 }
 
-func newAgentClient(cfg *config.Config) (*AgentClient, error) {
+func NewAgentClient(cfg *config.Config) *AgentClient {
 	return &AgentClient{
 		Config: cfg,
-	}, nil
+	}
 }
 
 func (c *AgentClient) Connect() error {
