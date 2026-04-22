@@ -2,8 +2,6 @@ package pipeline
 
 import (
 	"auto-deploy-agent/internal/logger"
-	"log"
-	"os"
 	"os/exec"
 )
 
@@ -24,7 +22,7 @@ func (p *Pipeline) RunStep(name string, args ...string) error {
 	stdout, _ := cmd.StdoutPipe()
 	stderr, _ := cmd.StderrPipe()
 
-	if err := cmd.Start; err != nil {
+	if err := cmd.Start(); err != nil {
 		return err
 	}
 
