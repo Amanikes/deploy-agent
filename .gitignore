@@ -1,0 +1,114 @@
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Dependency Directories
+# =========================
+node_modules/
+vendor/
+
+# =========================
+# Build / Output
+# =========================
+dist/
+build/
+out/
+target/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# =========================
+# Package Managers
+# =========================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+venv/
+env/
+.venv/
+
+# =========================
+# Java / JVM
+# =========================
+*.class
+*.jar
+*.war
+*.ear
+.gradle/
+
+# =========================
+# Go
+# =========================
+bin/
+pkg/
+
+# =========================
+# Rust
+# =========================
+target/
+Cargo.lock
+
+# =========================
+# C / C++
+# =========================
+*.o
+*.a
+*.out
+
+# =========================
+# Temporary Files
+# =========================
+tmp/
+temp/
+*.tmp
+*.bak
+
+# =========================
+# Coverage
+# =========================
+coverage/
+*.lcov
