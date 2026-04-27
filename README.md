@@ -155,12 +155,28 @@ Ack message shape:
 12. On error, API sends `failed` with message.
 13. If websocket drops, agent reconnects and resumes listening.
 
-## Relevant Source Files
+## Testing
 
-- `cmd/agent/main.go`
-- `internal/config/config.go`
-- `internal/api/client.go`
-- `internal/api/protocol.go`
-- `internal/api/handler.go`
-- `internal/pipeline/orchestrator.go`
-- `internal/pipeline/runner.go`
+Unit and integration tests are provided for the orchestrator and API handler logic:
+
+- All task execution now uses context-aware functions, supporting cancellation and progress reporting.
+- To run tests:
+
+```bash
+go test ./internal/pipeline
+go test ./internal/api
+```
+
+### Example Tests
+
+- Cancelling a running deploy task returns a context.Canceled error and triggers progress callbacks.
+- Unsupported actions return a clear error.
+- Status commands are executed and their output is validated.
+
+See `internal/pipeline/orchestrator_test.go` and `internal/api/handler_test.go` for details.
+
+## Recent Changes
+
+- Refactored orchestrator to use only context-aware task functions (deploy, restart, status).
+- Added support for command cancellation and rollback.
+- Added unit and integration tests for cancellation, unsupported actions, and status command execution.

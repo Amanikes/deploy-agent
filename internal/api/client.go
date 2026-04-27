@@ -17,11 +17,15 @@ type AgentClient struct {
 	Config  *config.Config
 	writeMu sync.Mutex
 	connMu  sync.RWMutex
+	// Task manager for cancellation support
+	tasks   map[string]func()
+	tasksMu sync.Mutex
 }
 
 func NewAgentClient(cfg *config.Config) *AgentClient {
 	return &AgentClient{
 		Config: cfg,
+		tasks:  make(map[string]func()),
 	}
 }
 
