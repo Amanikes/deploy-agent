@@ -16,9 +16,9 @@ func TestExecuteWithContext_Deploy_Cancel(t *testing.T) {
 		progressCalled = true
 	}
 
+	tmp := t.TempDir()
 	payload := map[string]string{
-		"repo_dir": "",
-		"repo_url": "https://github.com/example/repo.git",
+		"repo_dir":   tmp,
 		"deploy_cmd": "sleep 2", // Simulate long-running
 	}
 
